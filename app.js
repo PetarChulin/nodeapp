@@ -11,7 +11,7 @@ var loginRouter = require('./routes/login-route');
 var dashboardRouter = require('./routes/dashboard-route');
 var logoutRouter = require('./routes/logout-route');
 var indexRouter = require('./routes/index');
-const PORT = process.env.PORT || 1337;
+const PORT = process.env.PORT || 3000;
 var app = express();
 
 
