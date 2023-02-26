@@ -1,13 +1,13 @@
 var express = require('express');
 
 var mysql = require('mysql');
-var router = express.Router();
+const dbConfig = require("./db.config");
 
 var conn = mysql.createConnection({
-  host: 'eu-cdbr-west-03.cleardb.net',
-  user: 'be2474d9c0d341',             //your database user
-  password: 'd3a9406a',     //your database password 
-  database: 'heroku_400f28e9054929d'       //you have to create database in MySQL 'nodeapp' for example
+  host: dbConfig.HOST,
+  user: dbConfig.USER,             //your database user
+  password: dbConfig.PASSWORD,     //your database password 
+  database: dbConfig.DB       //you have to create database in MySQL 'nodeapp' for example
 }); 
 
 
