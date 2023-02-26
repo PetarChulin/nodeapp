@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <nav>
+    <div style="display: flex; align-content: flex-end; ">
+      <a style="margin: auto; color: aliceblue;" href="/register">Register</a>
+      <a style="margin: auto; color: aliceblue;" href="/login">Login</a>
+      <a style="margin: auto; color: aliceblue;" href="/">Home</a>
+    </div>
+  </nav>
+  <h2>Register</h2>
+
+  <div class="registration-form">
+    <p>
+      <%=(typeof alertMsg!='undefined' )? alertMsg:''%>
+    </p>
+    <form class="form-container" method="post" action="/register">
+      <div><br>
+        <label>Email</label><br><input type="text" placeholder="Email Address" name="email_address" required><br>
+          <label>Name</label><br><input type="text" placeholder="Login Name" name="login_name" required><br>
+          <label>Real name</label><br><input type="text" placeholder="Real Name" name="real_name" required><br>
+
+          <label>Password</label><br><input type="password" placeholder="Password" name="password" required><br>
+          <label>Confirm Password</label><br><input type="password" placeholder="Confirm Password"
+            name="confirm_password" required><br>
+
+          <label>Birth date</label><br><input type="date" placeholder="Birth date" name="birth_date" required><br>
+          <label>Country</label><br>
+          <select name="country" class="form-control" id="country">
+            <option selected>Select country</option>
+            <% for(var i=0; i < country_data.length; i++) { %>
+              <option value="<%= country_data[i].name %>">
+                <%= country_data[i].name %>
+              </option>
+              <% } %>
+          </select>
+      </div>
+      <div><br>
+        <input type="checkbox" value="conditions" name="conditions" required><label>agree with terms and
+          conditions</label>
+      </div>
+      <button type="submit">Register</button>
+      <a href="/login">Login</a>
+  </div>
+  </form>
+  </div>
+
+</body>
+
+</html>

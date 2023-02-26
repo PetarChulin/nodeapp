@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>  
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+
+</head>
+<body>
+  <nav>
+    <div style="display: flex; align-content: flex-end; ">
+      <a style="margin: auto; color: aliceblue;" href="/register">Register</a>
+      <a style="margin: auto; color: aliceblue;" href="/login">Login</a>
+      <a style="margin: auto; color: aliceblue;" href="/">Home</a>
+
+    </div>
+  </nav>
+  <h2>Login</h2>
+
+<p><%=(typeof alertMsg!='undefined')? alertMsg:''%></p><br>
+<form class="form-container" method="post" action="/login"><br>
+  <label>Email</label><br><input type="email" placeholder="Email Address or Login Name" name="email_address" required"><br>
+  <label>Password</label><br><input type="password" placeholder="Password" name="password" required"><br>
+       <button type="submit">Login Now</button>
+       <a href="/register">New Registration</a>
+</form>
+</body>
+</html>
