@@ -4,10 +4,10 @@ var mysql = require('mysql');
 var router = express.Router();
 
 var conn = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',             //your database user
-  password: '12345678',     //your database password 
-  database: 'nodeapp'       //you have to create database in MySQL 'nodeapp' for example
+  host: 'eu-cdbr-west-03.cleardb.net',
+  user: 'be2474d9c0d341',             //your database user
+  password: 'd3a9406a',     //your database password 
+  database: 'heroku_400f28e9054929d'       //you have to create database in MySQL 'nodeapp' for example
 }); 
 
 
