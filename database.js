@@ -35,7 +35,7 @@ conn.connect(function(err) {
    `
 
     let insertCountries = `
-    insert ignore into countries (id, name) VALUES 
+    INSERT IGNORE INTO countries (id, name) VALUES 
     (1, 'Bulgaria'),
        (2, 'Germany'),
        (3, 'USA'),
@@ -60,11 +60,6 @@ conn.connect(function(err) {
     }
   });
 
-//   conn.end(function(err) {
-//     if (err) {
-//       return console.log(err.message);
-//     }
-// });
 
 
 });
