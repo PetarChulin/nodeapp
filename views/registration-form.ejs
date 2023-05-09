@@ -29,10 +29,11 @@
           <label>Confirm Password</label><br><input type="password" placeholder="Confirm Password"
             name="confirm_password" required><br>
 
-          <label>Birth date</label><br><input type="date" placeholder="Birth date" name="birth_date" required><br>
-          <label>Country</label><br>
+          
+          <label>Birth date</label><br><input type="date"  placeholder="Birth date" name="birth_date" required><br>
+          <label>Continent</label><br>
           <select name="country" class="form-control" id="country">
-            <option selected>Select country</option>
+            <option selected>Select continent</option>
             <% for(var i=0; i < country_data.length; i++) { %>
               <option value="<%= country_data[i].name %>">
                 <%= country_data[i].name %>

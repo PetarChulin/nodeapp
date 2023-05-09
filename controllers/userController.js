@@ -55,7 +55,7 @@ module.exports = {
     }
 
     if (hasErrors) {
-      const countries = await db.promise("SELECT * from countries");
+      const countries = await db.promise("SELECT * from continents");
       return res.render("registration-form", {
         country_data: countries,
         alertMsg: msg,
@@ -84,8 +84,8 @@ module.exports = {
     return res.redirect("/dashboard");
   },
   registerGet: async (req, res) => {
-    const countries = await db.promise("SELECT * from countries");
-    return res.render("registration-form", { country_data: countries});
+    const continents = await db.promise("SELECT * from continents");
+    return res.render("registration-form", { country_data: continents});
   },
   login: async (req, res) => {
     var emailAddress = req.body.email_address;
@@ -120,14 +120,4 @@ module.exports = {
   },
 };
 
-// var sql='SELECT * FROM users WHERE login_name =? AND password =?';
-// db.query(sql, [loginName, password], function (err, data, fields) {
-//     if(err) throw err
-//     if(data.length > 0){
-//         req.session.loggedinUser= true;
-//         req.session.loginName = loginName;
-//         res.redirect('/dashboard');
-//     }else{
-//         res.render('login-form',{alertMsg:"Your Login Name or password is wrong"});
-//     }
-// });
+
