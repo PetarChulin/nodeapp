@@ -22,7 +22,6 @@ conn.connect(function (err) {
 
   let createQuery = `CREATE DATABASE IF NOT EXISTS ${databaseName}`;
 
-  let existed = false;
 
   conn.query(checkForExistence, function (err, res) {
 
@@ -30,7 +29,6 @@ conn.connect(function (err) {
     if (err) throw err;
     if (result.length == 0) {
       console.log("Database created successfully!");
-      existed = true;
     }
   });
 
@@ -57,14 +55,14 @@ conn.connect(function (err) {
      
   );`;
 
-  let createCountries = `
+  let createContinents = `
   CREATE TABLE  IF NOT EXISTS continents (
     id int(10) PRIMARY KEY NOT NULL AUTO_INCREMENT,
     name varchar(30) DEFAULT NULL
     );   
    `;
 
-  let insertCountries = `
+  let insertContinents = `
     INSERT IGNORE INTO continents (id, name) VALUES 
     (1, 'Africa'),
     (2, 'Asia'),
@@ -80,13 +78,13 @@ conn.connect(function (err) {
     }
   });
 
-  conn.query(createCountries, function (err, results, fields) {
+  conn.query(createContinents, function (err, results, fields) {
     if (err) {
       console.log(err.message);
     }
   });
 
-  conn.query(insertCountries, function (err, results, fields) {
+  conn.query(insertContinents, function (err, results, fields) {
     if (err) {
       console.log(err.message);
     }
